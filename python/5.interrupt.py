@@ -22,7 +22,7 @@ def node_a(state: State) -> Command[Literal["b", "c", END]]:
         next_node = "c"
     elif select == "q":
         next_node = END
-    else:
+    else: # If illegal values are passed we raise a interrupt to get human attention.
         admin = interrupt(f"Unexpected input : '{select}'")
         print(admin)
         if admin == "continue":
